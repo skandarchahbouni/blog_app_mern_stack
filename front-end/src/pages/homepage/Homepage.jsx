@@ -13,6 +13,7 @@ export default function Homepage() {
   
   useEffect(() => {
     const getPosts = async ()=>{
+      // try catch 
       const res = await axios.get(`/api/posts${search}`)
       setPosts(res.data)
     }

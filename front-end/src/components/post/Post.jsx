@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import "./post.css";
 
+const PF = "http://localhost:5000/images/";
+
 export default function Post({post}) {
   return (
     <div className="post">
@@ -8,7 +10,7 @@ export default function Post({post}) {
       {post.photo && 
       <img
         className="postImg"
-        src=""
+        src={PF + post.photo}
         alt=""
       />}
 

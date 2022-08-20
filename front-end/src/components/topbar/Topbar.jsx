@@ -1,8 +1,14 @@
 import { Link } from "react-router-dom";
+import {useContext} from 'react';
+import {Context} from '../../context/Context';
 import "./topbar.css";
 
 export default function Topbar() {
-  const user = true;
+  const {user} = useContext(Context)
+  const logout = ()=>{
+    localStorage.removeItem("user");
+    window.location = "/login"
+  }
   return (
     <div className="top">
       <div className="topLeft">
@@ -25,7 +31,7 @@ export default function Topbar() {
               WRITE
             </Link>
           </li>
-          {user && <li className="topListItem">LOGOUT</li>}
+          {user && <li className="topListItem" onClick={logout}>LOGOUT</li>}
         </ul>
       </div>
       <div className="topRight">
